@@ -38,6 +38,7 @@ function displayPics(){
   console.log(rando);
   // TODO: In a sentence or two, explain why the previous line of code threw an error when we changed the variable declaration from `var to `let`.
   // PUT YOUR RESPONSE IN THIS COMMENT
+  // We recieved a error when we turned the var to let on line 33 because the rando variable declared with let stays local to the while loop that it was declared in and the next while loop is unable to access it.
   console.log(viewed);
 
   for (var i = 0; i < 3; i++){
