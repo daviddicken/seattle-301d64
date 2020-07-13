@@ -1,5 +1,6 @@
 'use strict';
 
+<<<<<<< HEAD
 let names = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck', 'dragon', 'pen', 'pet-sweep', 'scissors', 'shark', 'sweep', 'tauntaun', 'unicorn', 'usb', 'water-can', 'wine-glass'];
 
 let leftImage = document.getElementById('left');
@@ -15,6 +16,23 @@ let list = document.getElementById('productlist');
 let totalClicks = 0;
 let views = [];
 let votes = [];
+=======
+const names = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck', 'dragon', 'pen', 'pet-sweep', 'scissors', 'shark', 'sweep', 'tauntaun', 'unicorn', 'usb', 'water-can', 'wine-glass'];
+
+const leftImage = document.getElementById('left');
+const centerImage = document.getElementById('center');
+const rightImage = document.getElementById('right');
+
+let allProducts = [];
+const container = document.getElementById('image_container');
+const viewed = [];
+const labels = [];
+const pics = [leftImage, centerImage, rightImage];
+const list = document.getElementById('productlist');
+let totalClicks = 0;
+const views = [];
+const votes = [];
+>>>>>>> 253eb39797fadcb4eac7a85658e4527f6982099c
 
 function Product(name) {
   this.name = name;
@@ -30,19 +48,32 @@ function makeRandom() {
 
 function displayPics(){
   while(viewed.length < 6){
+<<<<<<< HEAD
     let rando = makeRandom();
+=======
+    const rando = makeRandom();
+>>>>>>> 253eb39797fadcb4eac7a85658e4527f6982099c
     while(!viewed.includes(rando)){
       viewed.push(rando);
     }
+    console.log(rando);
   }
+<<<<<<< HEAD
 
   // TODO: In a sentence or two, explain why the previous line of code threw an error when we changed the variable declaration from `var to `let`.
+=======
+  // TODO: In a sentence or two, explain why the previous line of code threw an error when we changed the constiable declaration from `const to `const`.
+>>>>>>> 253eb39797fadcb4eac7a85658e4527f6982099c
   // PUT YOUR RESPONSE IN THIS COMMENT
   // We recieved a error when we turned the var to let on line 33 because the rando variable declared with let stays local to the while loop and is not accessable by the console.log that was on line 38.
   console.log(viewed);
 
   for (let i = 0; i < 3; i++){
+<<<<<<< HEAD
     let temp = viewed.shift();
+=======
+    const temp = viewed.shift();
+>>>>>>> 253eb39797fadcb4eac7a85658e4527f6982099c
     pics[i].src = allProducts[temp].path;
     pics[i].id = allProducts[temp].name;
     allProducts[temp].views += 1;
@@ -73,7 +104,11 @@ function handleClick(event) {
 
 function showList() {
   for(let i = 0; i < allProducts.length; i++) {
+<<<<<<< HEAD
     let liEl = document.createElement('li');
+=======
+    const liEl = document.createElement('li');
+>>>>>>> 253eb39797fadcb4eac7a85658e4527f6982099c
     liEl.textContent = allProducts[i].name + ' has ' + allProducts[i].votes + ' votes in ' + allProducts[i].views + ' views';
     list.appendChild(liEl);
   }
@@ -89,7 +124,11 @@ function makeChartData(){
 
 function makeChart(){
   makeChartData();
+<<<<<<< HEAD
   let ctx = document.getElementById('chartypants').getContext('2d');
+=======
+  const ctx = document.getElementById('chartypants').getContext('2d');
+>>>>>>> 253eb39797fadcb4eac7a85658e4527f6982099c
   new Chart(ctx, { //eslint-disable-line
     type: 'bar',
     data: {
@@ -129,7 +168,11 @@ if(localStorage.busmall){
   allProducts = JSON.parse(localStorage.busmall);
 } else {
   console.log('There is no local storage data; initialize app by creating instances');
+<<<<<<< HEAD
   for(let i = 0; i < names.length; i++) {
+=======
+  for(const i = 0; i < names.length; i++) {
+>>>>>>> 253eb39797fadcb4eac7a85658e4527f6982099c
     new Product(names[i]);
   }
 }
